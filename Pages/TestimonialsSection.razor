@@ -2,8 +2,8 @@
 <section id="testimonials" class="testimonials section">
     <!-- Section Title -->
     <div class="container section-title">
-        <h2>Testimonials</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>@Model.SectionTitle</h2>
+        <p>@Model.SectionSubtitle</p>
     </div><!-- End Section Title -->
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -12,54 +12,34 @@
             <div class="col-12">
                 <div class="critic-reviews" data-aos="fade-up" data-aos-delay="300">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="critic-review">
-                                <div class="review-quote">"</div>
-                                <div class="stars">
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                </div>
-                                <p>Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
-                                <div class="critic-info">
-                                    <div class="critic-name">The New York Times</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="critic-review">
-                                <div class="review-quote">"</div>
-                                <div class="stars">
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-half"></i>
-                                </div>
-                                <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Nulla quis lorem ut libero malesuada feugiat.</p>
-                                <div class="critic-info">
-                                    <div class="critic-name">Washington Post</div>
+                        @foreach (var critic in Model.Critics)
+                        {
+                            <div class="col-md-4">
+                                <div class="critic-review">
+                                    <div class="review-quote">"</div>
+                                    <div class="stars">
+                                        @for (var i = 1; i <= 5; i++)
+                                        {
+                                            if (critic.Rating >= i)
+                                            {
+                                                <i class="bi bi-star-fill"></i>
+                                                ;
+                                            }
+                                            else if (critic.Rating >= i - 0.5)
+                                            {
+
+                                                <i class="bi bi-star-half"></i>
+                                                ;
+                                            }
+                                        }
+                                    </div>
+                                    <p>@critic.Quote</p>
+                                    <div class="critic-info">
+                                        <div class="critic-name">@critic.Source</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="critic-review">
-                                <div class="review-quote">"</div>
-                                <div class="stars">
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                </div>
-                                <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
-                                <div class="critic-info">
-                                    <div class="critic-name">The Guardian</div>
-                                </div>
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
 
@@ -91,94 +71,37 @@
                         </script>
 
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <div class="stars">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p>
-                                        Proin eget tortor risus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla quis lorem ut libero malesuada feugiat.
-                                    </p>
-                                    <div class="testimonial-profile">
-                                        <img src="assets/img/person/person-f-1.webp" alt="Reviewer" class="img-fluid rounded-circle">
-                                        <div>
-                                            <h3>Jane Smith</h3>
-                                            <h4>Book Enthusiast</h4>
+                            @foreach (var t in Model.Testimonials)
+                            {
+                                <div class="swiper-slide">
+                                    <div class="testimonial-item">
+                                        <div class="stars">
+                                            @for (var i = 1; i <= 5; i++)
+                                            {
+                                                if (t.Rating >= i)
+                                                {
+                                                    <i class="bi bi-star-fill"></i>
+                                                    ;
+                                                }
+                                                else if (t.Rating >= i - 0.5)
+                                                {
+
+                                                    <i class="bi bi-star-half"></i>
+                                                    ;
+                                                }
+                                            }
+                                        </div>
+                                        <p>@t.Review</p>
+                                        <div class="testimonial-profile">
+                                            <img src="@t.ImageUrl" alt="@t.Name" class="img-fluid rounded-circle">
+                                            <div>
+                                                <h3>@t.Name</h3>
+                                                <h4>@t.Title</h4>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div><!-- End testimonial item -->
-
-                            <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <div class="stars">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p>
-                                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Cras ultricies ligula sed magna dictum porta. Vestibulum ante ipsum primis in faucibus orci luctus.
-                                    </p>
-                                    <div class="testimonial-profile">
-                                        <img src="assets/img/person/person-m-2.webp" alt="Reviewer" class="img-fluid rounded-circle">
-                                        <div>
-                                            <h3>Michael Johnson</h3>
-                                            <h4>Sci-Fi Blogger</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- End testimonial item -->
-
-                            <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <div class="stars">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-half"></i>
-                                    </div>
-                                    <p>
-                                        Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada.
-                                    </p>
-                                    <div class="testimonial-profile">
-                                        <img src="assets/img/person/person-f-3.webp" alt="Reviewer" class="img-fluid rounded-circle">
-                                        <div>
-                                            <h3>Emily Davis</h3>
-                                            <h4>Book Club President</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- End testimonial item -->
-
-                            <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <div class="stars">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p>
-                                        Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam id dui posuere blandit. Lorem ipsum dolor sit amet, consectetur.
-                                    </p>
-                                    <div class="testimonial-profile">
-                                        <img src="assets/img/person/person-m-4.webp" alt="Reviewer" class="img-fluid rounded-circle">
-                                        <div>
-                                            <h3>Robert Wilson</h3>
-                                            <h4>Literary Reviewer</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- End testimonial item -->
-
+                            }
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -189,7 +112,7 @@
         <div class="row">
             <div class="col-12 text-center" data-aos="fade-up">
                 <div class="overall-rating">
-                    <div class="rating-number">4.8</div>
+                    <div class="rating-number">@Model.Summary.AverageRating.ToString("0.0")</div>
                     <div class="rating-stars">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
@@ -197,14 +120,138 @@
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-half"></i>
                     </div>
-                    <p>Based on 230+ reviews</p>
+                    <p>Based on @Model.Summary.ReviewCount+ reviews</p>
                     <div class="rating-platforms">
-                        <span>Goodreads</span>
-                        <span>Amazon</span>
-                        <span>Barnes &amp; Noble</span>
+                        @foreach (var platform in Model.Summary.Platforms)
+                        {
+                            <span>@platform</span>
+                        }
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section><!-- /Testimonials Section -->
+@code {
+    private TestimonialsSectionModel Model = new();
+}
+@code {
+    public class TestimonialsSectionModel
+    {
+        // Section header
+        public string SectionTitle { get; set; } = "Testimonials";
+        public string SectionSubtitle { get; set; } =
+            "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit";
+
+        // Critic/media reviews
+        public List<CriticReview> Critics { get; set; } = new()
+        {
+            new CriticReview
+            {
+                Source = "The New York Times",
+                Quote = "Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
+                Rating = 5
+            },
+            new CriticReview
+            {
+                Source = "Washington Post",
+                Quote = "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Nulla quis lorem ut libero malesuada feugiat.",
+                Rating = 4.5
+            },
+            new CriticReview
+            {
+                Source = "The Guardian",
+                Quote = "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat.",
+                Rating = 5
+            }
+        };
+
+        // User testimonials (swiper)
+        public List<TestimonialItem> Testimonials { get; set; } = new()
+        {
+            new TestimonialItem
+            {
+                Name = "Jane Smith",
+                Title = "Book Enthusiast",
+                ImageUrl = "assets/img/person/person-f-1.webp",
+                Review = "Proin eget tortor risus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla quis lorem ut libero malesuada feugiat.",
+                Rating = 5
+            },
+            new TestimonialItem
+            {
+                Name = "Michael Johnson",
+                Title = "Sci-Fi Blogger",
+                ImageUrl = "assets/img/person/person-m-2.webp",
+                Review = "Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Cras ultricies ligula sed magna dictum porta. Vestibulum ante ipsum primis in faucibus orci luctus.",
+                Rating = 5
+            },
+            new TestimonialItem
+            {
+                Name = "Emily Davis",
+                Title = "Book Club President",
+                ImageUrl = "assets/img/person/person-f-3.webp",
+                Review = "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada.",
+                Rating = 4.5
+            },
+            new TestimonialItem
+            {
+                Name = "Robert Wilson",
+                Title = "Literary Reviewer",
+                ImageUrl = "assets/img/person/person-m-4.webp",
+                Review = "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam id dui posuere blandit. Lorem ipsum dolor sit amet, consectetur.",
+                Rating = 5
+            }
+        };
+
+        // Overall rating summary
+        public OverallRating Summary { get; set; } = new OverallRating
+        {
+            AverageRating = 4.8,
+            ReviewCount = 230,
+            Platforms = new() { "Goodreads", "Amazon", "Barnes & Noble" }
+        };
+    }
+
+    // --- Critic reviews ---
+    public class CriticReview
+    {
+        public string Source { get; set; } = string.Empty;
+        public string Quote { get; set; } = string.Empty;
+        public double Rating { get; set; } = 5.0;
+    }
+
+    // --- User testimonials ---
+    public class TestimonialItem
+    {
+        public string Name { get; set; } = string.Empty;
+        public string Title { get; set; } = string.Empty;
+        public string ImageUrl { get; set; } = string.Empty;
+        public string Review { get; set; } = string.Empty;
+        public double Rating { get; set; } = 5.0;
+    }
+
+    // --- Overall rating ---
+    public class OverallRating
+    {
+        public double AverageRating { get; set; }
+        public int ReviewCount { get; set; }
+        public List<string> Platforms { get; set; } = new();
+    }
+}
+
+<script>
+    function initSwiper() {
+      document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+        let config = JSON.parse(
+          swiperElement.querySelector(".swiper-config").innerHTML.trim()
+        );
+
+        if (swiperElement.classList.contains("swiper-tab")) {
+          initSwiperWithCustomPagination(swiperElement, config);
+        } else {
+          new Swiper(swiperElement, config);
+        }
+      });
+    }
+    initSwiper();
+</script>
