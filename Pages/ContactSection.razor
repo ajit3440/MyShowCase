@@ -1,95 +1,164 @@
-﻿    <!-- ContactSection -->
-<section id="contact" class="contact section light-background">
+﻿@using MyShowCase.Data
 
-    <!-- Section Title -->
+<section id="contact" class="contact section light-background">
     <div class="container section-title">
-        <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-    </div><!-- End Section Title -->
+        <h2>@Model.SectionTitle</h2>
+        <p>@Model.SectionSubtitle</p>
+    </div>
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row g-4 g-lg-5">
+
+            <!-- Left: Contact Info -->
             <div class="col-lg-5">
-                <div class="info-box" data-aos="fade-up" data-aos-delay="200">
-                    <h3>Contact Info</h3>
-                    <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.</p>
+                <div class="info-box">
+                    <h3>@Model.Info.Title</h3>
+                    <p>@Model.Info.Description</p>
 
-                    <div class="info-item" data-aos="fade-up" data-aos-delay="300">
-                        <div class="icon-box">
-                            <i class="bi bi-geo-alt"></i>
+                    @foreach (var item in Model.Info.Items)
+                    {
+                        <div class="info-item">
+                            <div class="icon-box"><i class="@item.Icon"></i></div>
+                            <div class="content">
+                                <h4>@item.Title</h4>
+                                @foreach (var line in item.Lines)
+                                {
+                                    <p>@line</p>
+                                }
+                            </div>
                         </div>
-                        <div class="content">
-                            <h4>Our Location</h4>
-                            <p>A108 Adam Street</p>
-                            <p>New York, NY 535022</p>
-                        </div>
-                    </div>
-
-                    <div class="info-item" data-aos="fade-up" data-aos-delay="400">
-                        <div class="icon-box">
-                            <i class="bi bi-telephone"></i>
-                        </div>
-                        <div class="content">
-                            <h4>Phone Number</h4>
-                            <p>+1 5589 55488 55</p>
-                            <p>+1 6678 254445 41</p>
-                        </div>
-                    </div>
-
-                    <div class="info-item" data-aos="fade-up" data-aos-delay="500">
-                        <div class="icon-box">
-                            <i class="bi bi-envelope"></i>
-                        </div>
-                        <div class="content">
-                            <h4>Email Address</h4>
-                            <p>info@example.com</p>
-                            <p>contact@example.com</p>
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
 
+            <!-- Right: Contact Form -->
             <div class="col-lg-7">
-                <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
-                    <h3>Get In Touch</h3>
-                    <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.</p>
+                <div class="contact-form">
+                    <h3>@Model.Form.Title</h3>
+                    <p>@Model.Form.Description</p>
 
-                    <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                    <form action="@Model.Form.Action" method="@Model.Form.Method" class="php-email-form">
                         <div class="row gy-4">
-
-                            <div class="col-md-6">
-                                <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                            </div>
-
-                            <div class="col-md-6 ">
-                                <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                            </div>
-
-                            <div class="col-12">
-                                <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                            </div>
-
-                            <div class="col-12">
-                                <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                            </div>
+                            @foreach (var field in Model.Form.Fields)
+                            {
+                                @if (field.Type == "textarea")
+                                {
+                                    <div class="col-12">
+                                        <textarea name="@field.Name" rows="@field.Rows" class="form-control"
+                                          placeholder="@field.Placeholder" required="@field.IsRequired"></textarea>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-md-6">
+                                        <input type="@field.Type" name="@field.Name" class="form-control"
+                                               placeholder="@field.Placeholder" required="@field.IsRequired" />
+                                    </div>
+                                }
+                            }
 
                             <div class="col-12 text-center">
                                 <div class="loading">Loading</div>
                                 <div class="error-message"></div>
                                 <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                                <button type="submit" class="btn">Send Message</button>
+                                <button type="submit" class="btn">@Model.Form.SubmitButtonText</button>
                             </div>
-
                         </div>
                     </form>
-
                 </div>
             </div>
 
         </div>
-
     </div>
+</section>
 
-</section><!-- /Contact Section -->
+@code {
+    private ContactSectionModel Model = new();
+    public class ContactSectionModel
+    {
+        // Section Header
+        public string SectionTitle { get; set; } = "Contact";
+        public string SectionSubtitle { get; set; } =
+            "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit";
+
+        // Contact Info
+        public ContactInfo Info { get; set; } = new ContactInfo
+        {
+            Title = "Contact Info",
+            Description = "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.",
+            Items = new List<ContactInfoItem>
+            {
+                new ContactInfoItem
+                {
+                    Icon = "bi bi-geo-alt",
+                    Title = "Our Location",
+                    Lines = new() { "A108 Adam Street", "New York, NY 535022" }
+                },
+                new ContactInfoItem
+                {
+                    Icon = "bi bi-telephone",
+                    Title = "Phone Number",
+                    Lines = new() { "+1 5589 55488 55", "+1 6678 254445 41" }
+                },
+                new ContactInfoItem
+                {
+                    Icon = "bi bi-envelope",
+                    Title = "Email Address",
+                    Lines = new() { "info@example.com", "contact@example.com" }
+                }
+            }
+        };
+
+        // Contact Form
+        public ContactForm Form { get; set; } = new ContactForm
+        {
+            Title = "Get In Touch",
+            Description = "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.",
+            Fields = new()
+            {
+                new FormField { Name = "name", Type = "text", Placeholder = "Your Name", IsRequired = true },
+                new FormField { Name = "email", Type = "email", Placeholder = "Your Email", IsRequired = true },
+                new FormField { Name = "subject", Type = "text", Placeholder = "Subject", IsRequired = true },
+                new FormField { Name = "message", Type = "textarea", Placeholder = "Message", IsRequired = true, Rows = 6 }
+            },
+            SubmitButtonText = "Send Message",
+            Action = "forms/contact.php",
+            Method = "post"
+        };
+    }
+
+    // --- Contact Info Section ---
+    public class ContactInfo
+    {
+        public string Title { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public List<ContactInfoItem> Items { get; set; } = new();
+    }
+
+    public class ContactInfoItem
+    {
+        public string Icon { get; set; } = string.Empty; // e.g. bi bi-telephone
+        public string Title { get; set; } = string.Empty;
+        public List<string> Lines { get; set; } = new(); // multiple lines (address/phones/emails)
+    }
+
+    // --- Contact Form Section ---
+    public class ContactForm
+    {
+        public string Title { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public string Action { get; set; } = string.Empty;
+        public string Method { get; set; } = "post";
+        public List<FormField> Fields { get; set; } = new();
+        public string SubmitButtonText { get; set; } = "Send Message";
+    }
+
+    public class FormField
+    {
+        public string Name { get; set; } = string.Empty;
+        public string Type { get; set; } = "text"; // text, email, textarea
+        public string Placeholder { get; set; } = string.Empty;
+        public bool IsRequired { get; set; } = true;
+        public int Rows { get; set; } = 3; // only for textarea
+    }
+}
