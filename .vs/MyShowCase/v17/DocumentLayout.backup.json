@@ -1,0 +1,462 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\pages\\herosection.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:pages\\herosection.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\wwwroot\\assets\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:wwwroot\\assets\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\pages\\service-detailspage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:pages\\service-detailspage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\pages\\portfoliodetailssection.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:pages\\portfoliodetailssection.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\pages\\portfoliosection.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:pages\\portfoliosection.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\pages\\contactsection.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:pages\\contactsection.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\pages\\faqsection.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:pages\\faqsection.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\pages\\testimonialssection.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:pages\\testimonialssection.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\pages\\servicessection.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:pages\\servicessection.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\pages\\resumesection.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:pages\\resumesection.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\pages\\skillssection.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:pages\\skillssection.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\pages\\aboutsection.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:pages\\aboutsection.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\layout\\publiclayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:layout\\publiclayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\layout\\footer.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:layout\\footer.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\layout\\header.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:layout\\header.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\data\\blogpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:data\\blogpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\data\\contactmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:data\\contactmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\data\\experience.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:data\\experience.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\data\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:data\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\data\\skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:data\\skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|d:\\ajit\\myshowcaseapp\\myshowcase\\data\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA599C98-F865-4D8B-9BBB-CE5E3C5406A8}|MyShowCase.csproj|solutionrelative:data\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "main.js",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\wwwroot\\assets\\js\\main.js",
+              "RelativeDocumentMoniker": "wwwroot\\assets\\js\\main.js",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\wwwroot\\assets\\js\\main.js",
+              "RelativeToolTip": "wwwroot\\assets\\js\\main.js",
+              "ViewState": "AgIAADEAAAAAAAAAAAAgwLEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-06T09:26:26.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Footer.razor",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Layout\\Footer.razor",
+              "RelativeDocumentMoniker": "Layout\\Footer.razor",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Layout\\Footer.razor",
+              "RelativeToolTip": "Layout\\Footer.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T08:33:29.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ContactSection.razor",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\ContactSection.razor",
+              "RelativeDocumentMoniker": "Pages\\ContactSection.razor",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\ContactSection.razor",
+              "RelativeToolTip": "Pages\\ContactSection.razor",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAKIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T08:33:04.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FaqSection.razor",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\FaqSection.razor",
+              "RelativeDocumentMoniker": "Pages\\FaqSection.razor",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\FaqSection.razor",
+              "RelativeToolTip": "Pages\\FaqSection.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T08:32:50.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TestimonialsSection.razor",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\TestimonialsSection.razor",
+              "RelativeDocumentMoniker": "Pages\\TestimonialsSection.razor",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\TestimonialsSection.razor",
+              "RelativeToolTip": "Pages\\TestimonialsSection.razor",
+              "ViewState": "AgIAANUAAAAAAAAAAAAAAP8AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T08:32:26.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PortfolioSection.razor",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\PortfolioSection.razor",
+              "RelativeDocumentMoniker": "Pages\\PortfolioSection.razor",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\PortfolioSection.razor",
+              "RelativeToolTip": "Pages\\PortfolioSection.razor",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAWwN4AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T08:31:44.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ServicesSection.razor",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\ServicesSection.razor",
+              "RelativeDocumentMoniker": "Pages\\ServicesSection.razor",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\ServicesSection.razor",
+              "RelativeToolTip": "Pages\\ServicesSection.razor",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAHEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T08:31:27.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Home.razor",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Pages\\Home.razor",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\Home.razor",
+              "RelativeToolTip": "Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T08:13:13.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HeroSection.razor",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\HeroSection.razor",
+              "RelativeDocumentMoniker": "Pages\\HeroSection.razor",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\HeroSection.razor",
+              "RelativeToolTip": "Pages\\HeroSection.razor",
+              "ViewState": "AgIAACoAAAAAAAAAAAAmwF0AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T08:29:24.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PortfolioDetailsSection.razor",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\PortfolioDetailsSection.razor",
+              "RelativeDocumentMoniker": "Pages\\PortfolioDetailsSection.razor",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\PortfolioDetailsSection.razor",
+              "RelativeToolTip": "Pages\\PortfolioDetailsSection.razor",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAIwMMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T10:57:45.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Service-detailsPage.razor",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\Service-detailsPage.razor",
+              "RelativeDocumentMoniker": "Pages\\Service-detailsPage.razor",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\Service-detailsPage.razor",
+              "RelativeToolTip": "Pages\\Service-detailsPage.razor",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T11:23:32.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "index.html",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "wwwroot\\index.html",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\wwwroot\\index.html",
+              "RelativeToolTip": "wwwroot\\index.html",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAAAHsAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-11-06T08:17:58.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Weather.razor",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\Weather.razor",
+              "RelativeDocumentMoniker": "Pages\\Weather.razor",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\Weather.razor",
+              "RelativeToolTip": "Pages\\Weather.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T11:06:51.303Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ResumeSection.razor",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\ResumeSection.razor",
+              "RelativeDocumentMoniker": "Pages\\ResumeSection.razor",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\ResumeSection.razor",
+              "RelativeToolTip": "Pages\\ResumeSection.razor",
+              "ViewState": "AgIAAEkAAAAAAAAAAIAwwEQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T08:31:10.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SkillsSection.razor",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\SkillsSection.razor",
+              "RelativeDocumentMoniker": "Pages\\SkillsSection.razor",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\SkillsSection.razor",
+              "RelativeToolTip": "Pages\\SkillsSection.razor",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAIwLYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T08:30:35.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AboutSection.razor",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\AboutSection.razor",
+              "RelativeDocumentMoniker": "Pages\\AboutSection.razor",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Pages\\AboutSection.razor",
+              "RelativeToolTip": "Pages\\AboutSection.razor",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAEEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T08:29:46.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Header.razor",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Layout\\Header.razor",
+              "RelativeDocumentMoniker": "Layout\\Header.razor",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Layout\\Header.razor",
+              "RelativeToolTip": "Layout\\Header.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T08:28:56.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "App.razor",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\App.razor",
+              "RelativeDocumentMoniker": "App.razor",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\App.razor",
+              "RelativeToolTip": "App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T08:16:31.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "Layout\\MainLayout.razor",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T08:16:11.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PublicLayout.razor",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Layout\\PublicLayout.razor",
+              "RelativeDocumentMoniker": "Layout\\PublicLayout.razor",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Layout\\PublicLayout.razor",
+              "RelativeToolTip": "Layout\\PublicLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T08:16:08.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "BlogPost.cs",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Data\\BlogPost.cs",
+              "RelativeDocumentMoniker": "Data\\BlogPost.cs",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Data\\BlogPost.cs",
+              "RelativeToolTip": "Data\\BlogPost.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T08:12:47.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Profile.cs",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Data\\Profile.cs",
+              "RelativeDocumentMoniker": "Data\\Profile.cs",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Data\\Profile.cs",
+              "RelativeToolTip": "Data\\Profile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T08:12:06.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ContactMessage.cs",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Data\\ContactMessage.cs",
+              "RelativeDocumentMoniker": "Data\\ContactMessage.cs",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Data\\ContactMessage.cs",
+              "RelativeToolTip": "Data\\ContactMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T08:11:57.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Experience.cs",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Data\\Experience.cs",
+              "RelativeDocumentMoniker": "Data\\Experience.cs",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Data\\Experience.cs",
+              "RelativeToolTip": "Data\\Experience.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T08:11:48.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Skill.cs",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Data\\Skill.cs",
+              "RelativeDocumentMoniker": "Data\\Skill.cs",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Data\\Skill.cs",
+              "RelativeToolTip": "Data\\Skill.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T08:11:41.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Project.cs",
+              "DocumentMoniker": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Data\\Project.cs",
+              "RelativeDocumentMoniker": "Data\\Project.cs",
+              "ToolTip": "D:\\Ajit\\MyShowCaseApp\\MyShowCase\\Data\\Project.cs",
+              "RelativeToolTip": "Data\\Project.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T08:11:31.701Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
