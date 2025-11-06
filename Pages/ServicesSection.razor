@@ -3,113 +3,112 @@
 
     <!-- Section Title -->
     <div class="container section-title">
-        <h2>Services</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>@Model.SectionTitle</h2>
+        <p>@Model.SectionSubtitle</p>
     </div><!-- End Section Title -->
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row g-4">
-
-            <!-- Card 1 -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-item">
-                    <div class="icon">
-                        <i class="bi bi-stack"></i>
-                    </div>
-                    <h3>Digital Solutions</h3>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa.</p>
-                    <div class="card-links">
-                        <a href="#" class="link-item">
-                            Learn More
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div><!-- End Service Item -->
-            <!-- Card 2 -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-item">
-                    <div class="icon">
-                        <i class="bi bi-shield-check"></i>
-                    </div>
-                    <h3>Secure Systems</h3>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.</p>
-                    <div class="card-links">
-                        <a href="#" class="link-item">
-                            Learn More
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
+            @foreach (var item in Model.Services)
+            {
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="@item.AOSDelay">
+                    <div class="service-item">
+                        <div class="icon">
+                            <i class="@item.Icon"></i>
+                        </div>
+                        <h3>@item.Title</h3>
+                        <p>@item.Description</p>
+                        <div class="card-links">
+                            <a href="@item.LinkUrl" class="link-item">
+                                Learn More
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div><!-- End Service Item -->
-            <!-- Card 3 -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="service-item">
-                    <div class="icon">
-                        <i class="bi bi-graph-up"></i>
-                    </div>
-                    <h3>Growth Strategy</h3>
-                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum qui dolorem.</p>
-                    <div class="card-links">
-                        <a href="#" class="link-item">
-                            Learn More
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div><!-- End Service Item -->
-            <!-- Card 4 -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-item">
-                    <div class="icon">
-                        <i class="bi bi-cpu"></i>
-                    </div>
-                    <h3>AI Integration</h3>
-                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p>
-                    <div class="card-links">
-                        <a href="#" class="link-item">
-                            Learn More
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div><!-- End Service Item -->
-            <!-- Card 5 -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-item">
-                    <div class="icon">
-                        <i class="bi bi-cloud-arrow-up"></i>
-                    </div>
-                    <h3>Cloud Services</h3>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos.</p>
-                    <div class="card-links">
-                        <a href="#" class="link-item">
-                            Learn More
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div><!-- End Service Item -->
-            <!-- Card 6 -->
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="service-item">
-                    <div class="icon">
-                        <i class="bi bi-gear"></i>
-                    </div>
-                    <h3>Process Automation</h3>
-                    <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
-                    <div class="card-links">
-                        <a href="#" class="link-item">
-                            Learn More
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div><!-- End Service Item -->
-
+            }
         </div>
 
     </div>
 
 </section><!-- /Services Section -->
+@code {
+    private ServicesSectionModel Model = new();
+    public class ServicesSectionModel
+    {
+        // Section header
+        public string SectionTitle { get; set; } = "Services";
+        public string SectionSubtitle { get; set; } =
+            "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit";
+
+        // Service cards
+        public List<ServiceCard> Services { get; set; } = new()
+        {
+            new ServiceCard
+            {
+                Icon = "bi bi-stack",
+                Title = "Digital Solutions",
+                Description = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa.",
+                LinkText = "Learn More",
+                LinkUrl = "#",
+                AOSDelay = 100
+            },
+            new ServiceCard
+            {
+                Icon = "bi bi-shield-check",
+                Title = "Secure Systems",
+                Description = "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.",
+                LinkText = "Learn More",
+                LinkUrl = "#",
+                AOSDelay = 200
+            },
+            new ServiceCard
+            {
+                Icon = "bi bi-graph-up",
+                Title = "Growth Strategy",
+                Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum qui dolorem.",
+                LinkText = "Learn More",
+                LinkUrl = "#",
+                AOSDelay = 300
+            },
+            new ServiceCard
+            {
+                Icon = "bi bi-cpu",
+                Title = "AI Integration",
+                Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.",
+                LinkText = "Learn More",
+                LinkUrl = "#",
+                AOSDelay = 100
+            },
+            new ServiceCard
+            {
+                Icon = "bi bi-cloud-arrow-up",
+                Title = "Cloud Services",
+                Description = "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos.",
+                LinkText = "Learn More",
+                LinkUrl = "#",
+                AOSDelay = 200
+            },
+            new ServiceCard
+            {
+                Icon = "bi bi-gear",
+                Title = "Process Automation",
+                Description = "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.",
+                LinkText = "Learn More",
+                LinkUrl = "#",
+                AOSDelay = 300
+            }
+        };
+    }
+
+    public class ServiceCard
+    {
+        public string Icon { get; set; } = string.Empty;     // e.g., "bi bi-stack"
+        public string Title { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public string LinkText { get; set; } = "Learn More";
+        public string LinkUrl { get; set; } = "#";
+        public int AOSDelay { get; set; } = 100;             // for data-aos-delay
+    }
+}
