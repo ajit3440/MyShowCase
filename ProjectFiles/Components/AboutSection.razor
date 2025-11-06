@@ -72,66 +72,64 @@
 </section>
 
 @code {
-    private AboutSectionModel Model = new();
-    public class AboutSectionModel
+    private AboutSectionModel Model { get; set; }
+
+    protected override void OnInitialized()
     {
-        // Section Title and Subtitle
-        public string SectionTitle { get; set; } = "About";
-        public string SectionSubtitle { get; set; } =
-            "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit";
-
-        // Profile Image and Signature
-        public string ProfileImageUrl { get; set; } = "assets/img/profile/profile-square-1.webp";
-        public string SignatureImageUrl { get; set; } = "assets/img/misc/signature-1.webp";
-        public string Quote { get; set; } = "Building meaningful digital experiences through creative code.";
-
-        // Introduction Section
-        public string IntroTitle { get; set; } = "Hi, I'm Brandon - a Creative Developer";
-        public string IntroDescription { get; set; } =
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.";
-
-        // Skills Grid
-        public List<AboutSkill> Skills { get; set; } = new()
-        {
-            new AboutSkill
-            {
-                Icon = "bi bi-palette",
-                Title = "UI/UX Design",
-                Description = "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar"
-            },
-            new AboutSkill
-            {
-                Icon = "bi bi-code-slash",
-                Title = "Frontend Dev",
-                Description = "Sed porttitor lectus nibh. Cras ultricies ligula sed magna"
-            },
-            new AboutSkill
-            {
-                Icon = "bi bi-camera",
-                Title = "Photography",
-                Description = "Vestibulum ac diam sit amet quam vehicula elementum"
-            }
-        };
-
-        // Timeline (Journey)
-        public List<JourneyTimeline> Timeline { get; set; } = new()
-        {
-            new JourneyTimeline { Year = "2019", Description = "Graduated with B.A. in Digital Design from Creative University" },
-            new JourneyTimeline { Year = "2020", Description = "Joined InnovateTech as Junior Frontend Developer" },
-            new JourneyTimeline { Year = "2023", Description = "Launched freelance career specializing in creative web solutions" }
-        };
-
-        // Fun Fact + Call-to-Action Buttons
-        public string FunFactEmoji { get; set; } = "☕";
-        public string FunFactText { get; set; } = "Coffee-fueled designer based in Portland";
-
-        public string PrimaryButtonText { get; set; } = "View My Work";
-        public string PrimaryButtonLink { get; set; } = "#portfolio";
-        public string SecondaryButtonText { get; set; } = "Download Resume";
-        public string SecondaryButtonLink { get; set; } = "#";
+        Model = GetAboutSection();
     }
 
-    // Skill Block
+    private AboutSectionModel GetAboutSection()
+    {
+        return new AboutSectionModel
+        {
+            SectionTitle = "About",
+            SectionSubtitle = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
+            ProfileImageUrl = "assets/img/profile/profile-square-1.webp",
+            SignatureImageUrl = "assets/img/misc/signature-1.webp",
+            Quote = "Building meaningful digital experiences through creative code.",
+            IntroTitle = "Hi, I'm Brandon - a Creative Developer",
+            IntroDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.",
+            Skills = new List<AboutSkill>
+            {
+                new AboutSkill { Icon = "bi bi-palette", Title = "UI/UX Design", Description = "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar" },
+                new AboutSkill { Icon = "bi bi-code-slash", Title = "Frontend Dev", Description = "Sed porttitor lectus nibh. Cras ultricies ligula sed magna" },
+                new AboutSkill { Icon = "bi bi-camera", Title = "Photography", Description = "Vestibulum ac diam sit amet quam vehicula elementum" }
+            },
+            Timeline = new List<JourneyTimeline>
+            {
+                new JourneyTimeline { Year = "2019", Description = "Graduated with B.A. in Digital Design from Creative University" },
+                new JourneyTimeline { Year = "2020", Description = "Joined InnovateTech as Junior Frontend Developer" },
+                new JourneyTimeline { Year = "2023", Description = "Launched freelance career specializing in creative web solutions" }
+            },
+            FunFactEmoji = "☕",
+            FunFactText = "Coffee-fueled designer based in Portland",
+            PrimaryButtonText = "View My Work",
+            PrimaryButtonLink = "#portfolio",
+            SecondaryButtonText = "Download Resume",
+            SecondaryButtonLink = "#"
+        };
+    }
+
+    public class AboutSectionModel
+    {
+        public string SectionTitle { get; set; } = string.Empty;
+        public string SectionSubtitle { get; set; } = string.Empty;
+        public string ProfileImageUrl { get; set; } = string.Empty;
+        public string SignatureImageUrl { get; set; } = string.Empty;
+        public string Quote { get; set; } = string.Empty;
+        public string IntroTitle { get; set; } = string.Empty;
+        public string IntroDescription { get; set; } = string.Empty;
+        public List<AboutSkill> Skills { get; set; } = new();
+        public List<JourneyTimeline> Timeline { get; set; } = new();
+        public string FunFactEmoji { get; set; } = string.Empty;
+        public string FunFactText { get; set; } = string.Empty;
+        public string PrimaryButtonText { get; set; } = string.Empty;
+        public string PrimaryButtonLink { get; set; } = string.Empty;
+        public string SecondaryButtonText { get; set; } = string.Empty;
+        public string SecondaryButtonLink { get; set; } = string.Empty;
+    }
+
     public class AboutSkill
     {
         public string Icon { get; set; } = string.Empty;
@@ -139,7 +137,6 @@
         public string Description { get; set; } = string.Empty;
     }
 
-    // Timeline Item
     public class JourneyTimeline
     {
         public string Year { get; set; } = string.Empty;

@@ -73,61 +73,72 @@
 </section>
 
 @code {
-    private ContactSectionModel Model = new();
-    public class ContactSectionModel
+    private ContactSectionModel Model { get; set; }
+
+    protected override void OnInitialized()
     {
-        // Section Header
-        public string SectionTitle { get; set; } = "Contact";
-        public string SectionSubtitle { get; set; } =
-            "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit";
+        Model = GetContactSection();
+    }
 
-        // Contact Info
-        public ContactInfo Info { get; set; } = new ContactInfo
+    private ContactSectionModel GetContactSection()
+    {
+        return new ContactSectionModel
         {
-            Title = "Contact Info",
-            Description = "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.",
-            Items = new List<ContactInfoItem>
+            SectionTitle = "Contact",
+            SectionSubtitle = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
+            Info = new ContactInfo
             {
-                new ContactInfoItem
+                Title = "Contact Info",
+                Description = "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.",
+                Items = new List<ContactInfoItem>
                 {
-                    Icon = "bi bi-geo-alt",
-                    Title = "Our Location",
-                    Lines = new() { "A108 Adam Street", "New York, NY 535022" }
-                },
-                new ContactInfoItem
-                {
-                    Icon = "bi bi-telephone",
-                    Title = "Phone Number",
-                    Lines = new() { "+1 5589 55488 55", "+1 6678 254445 41" }
-                },
-                new ContactInfoItem
-                {
-                    Icon = "bi bi-envelope",
-                    Title = "Email Address",
-                    Lines = new() { "info@example.com", "contact@example.com" }
+                    new ContactInfoItem
+                    {
+                        Icon = "bi bi-geo-alt",
+                        Title = "Our Location",
+                        Lines = new() { "A108 Adam Street", "New York, NY 535022" }
+                    },
+                    new ContactInfoItem
+                    {
+                        Icon = "bi bi-telephone",
+                        Title = "Phone Number",
+                        Lines = new() { "+1 5589 55488 55", "+1 6678 254445 41" }
+                    },
+                    new ContactInfoItem
+                    {
+                        Icon = "bi bi-envelope",
+                        Title = "Email Address",
+                        Lines = new() { "info@example.com", "contact@example.com" }
+                    }
                 }
-            }
-        };
-
-        // Contact Form
-        public ContactForm Form { get; set; } = new ContactForm
-        {
-            Title = "Get In Touch",
-            Description = "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.",
-            Fields = new()
-            {
-                new FormField { Name = "name", Type = "text", Placeholder = "Your Name", IsRequired = true },
-                new FormField { Name = "email", Type = "email", Placeholder = "Your Email", IsRequired = true },
-                new FormField { Name = "subject", Type = "text", Placeholder = "Subject", IsRequired = true },
-                new FormField { Name = "message", Type = "textarea", Placeholder = "Message", IsRequired = true, Rows = 6 }
             },
-            SubmitButtonText = "Send Message",
-            Action = "forms/contact.php",
-            Method = "post"
+            Form = new ContactForm
+            {
+                Title = "Get In Touch",
+                Description = "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.",
+                Fields = new()
+                {
+                    new FormField { Name = "name", Type = "text", Placeholder = "Your Name", IsRequired = true },
+                    new FormField { Name = "email", Type = "email", Placeholder = "Your Email", IsRequired = true },
+                    new FormField { Name = "subject", Type = "text", Placeholder = "Subject", IsRequired = true },
+                    new FormField { Name = "message", Type = "textarea", Placeholder = "Message", IsRequired = true, Rows = 6 }
+                },
+                SubmitButtonText = "Send Message",
+                Action = "forms/contact.php",
+                Method = "post"
+            }
         };
     }
 
-    // --- Contact Info Section ---
+    // --- Models ---
+    public class ContactSectionModel
+    {
+        public string SectionTitle { get; set; } = string.Empty;
+        public string SectionSubtitle { get; set; } = string.Empty;
+        public ContactInfo Info { get; set; } = new();
+        public ContactForm Form { get; set; } = new();
+    }
+
     public class ContactInfo
     {
         public string Title { get; set; } = string.Empty;
@@ -137,12 +148,11 @@
 
     public class ContactInfoItem
     {
-        public string Icon { get; set; } = string.Empty; // e.g. bi bi-telephone
+        public string Icon { get; set; } = string.Empty;
         public string Title { get; set; } = string.Empty;
-        public List<string> Lines { get; set; } = new(); // multiple lines (address/phones/emails)
+        public List<string> Lines { get; set; } = new();
     }
 
-    // --- Contact Form Section ---
     public class ContactForm
     {
         public string Title { get; set; } = string.Empty;
@@ -156,9 +166,9 @@
     public class FormField
     {
         public string Name { get; set; } = string.Empty;
-        public string Type { get; set; } = "text"; // text, email, textarea
+        public string Type { get; set; } = "text";
         public string Placeholder { get; set; } = string.Empty;
         public bool IsRequired { get; set; } = true;
-        public int Rows { get; set; } = 3; // only for textarea
+        public int Rows { get; set; } = 3;
     }
 }

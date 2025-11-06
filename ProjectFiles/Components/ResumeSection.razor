@@ -75,84 +75,97 @@
 
 </section><!-- /Resume Section -->
 @code {
-    private ResumeSectionModel Model = new();
-    public class ResumeSectionModel
+    private ResumeSectionModel Model { get; set; }
+
+    protected override void OnInitialized()
     {
-        // Section Header
-        public string SectionTitle { get; set; } = "Resume";
-        public string SectionSubtitle { get; set; } =
-            "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit";
+        Model = GetResumeSection();
+    }
 
-        // Experience Section
-        public ExperienceSection Experience { get; set; } = new ExperienceSection
+    private ResumeSectionModel GetResumeSection()
+    {
+        return new ResumeSectionModel
         {
-            Title = "Professional Journey",
-            Subtitle = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas vestibulum tortor quam.",
-            Items = new List<ExperienceItem>
+            SectionTitle = "Resume",
+            SectionSubtitle = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
+
+            Experience = new ExperienceSection
             {
-                new ExperienceItem
+                Title = "Professional Journey",
+                Subtitle = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas vestibulum tortor quam.",
+                Items = new List<ExperienceItem>
                 {
-                    Role = "Technical Director",
-                    Company = "Proin Corporation",
-                    Duration = "2022 - Present",
-                    Description = "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra veniam sit amet lacus cursus.",
-                    Achievements = new()
+                    new ExperienceItem
                     {
-                        "Managed cross-functional teams of 15+ professionals",
-                        "Implemented agile methodologies resulting in 40% efficiency gain",
-                        "Led digital transformation initiatives worth $2M+"
+                        Role = "Technical Director",
+                        Company = "Proin Corporation",
+                        Duration = "2022 - Present",
+                        Description = "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra veniam sit amet lacus cursus.",
+                        Achievements = new()
+                        {
+                            "Managed cross-functional teams of 15+ professionals",
+                            "Implemented agile methodologies resulting in 40% efficiency gain",
+                            "Led digital transformation initiatives worth $2M+"
+                        }
+                    },
+                    new ExperienceItem
+                    {
+                        Role = "Senior Development Manager",
+                        Company = "Consectetur Solutions Inc",
+                        Duration = "2018 - 2022",
+                        Description = "Donec quam felis ultricies nec pellentesque eu pretium quis sem nulla consequat massa quis enim donec pede justo fringilla vel."
+                    },
+                    new ExperienceItem
+                    {
+                        Role = "Product Development Specialist",
+                        Company = "Adipiscing Technologies",
+                        Duration = "2015 - 2018",
+                        Description = "Nam quam nunc blandit vel luctus pulvinar hendrerit id lorem maecenas nec odio et ante tincidunt tempus donec vitae sapien ut."
                     }
-                },
-                new ExperienceItem
-                {
-                    Role = "Senior Development Manager",
-                    Company = "Consectetur Solutions Inc",
-                    Duration = "2018 - 2022",
-                    Description = "Donec quam felis ultricies nec pellentesque eu pretium quis sem nulla consequat massa quis enim donec pede justo fringilla vel."
-                },
-                new ExperienceItem
-                {
-                    Role = "Product Development Specialist",
-                    Company = "Adipiscing Technologies",
-                    Duration = "2015 - 2018",
-                    Description = "Nam quam nunc blandit vel luctus pulvinar hendrerit id lorem maecenas nec odio et ante tincidunt tempus donec vitae sapien ut."
                 }
-            }
-        };
+            },
 
-        // Education Section
-        public EducationSection Education { get; set; } = new EducationSection
-        {
-            Title = "Academic Excellence",
-            Subtitle = "Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget dolor aenean massa.",
-            Items = new List<EducationItem>
+            Education = new EducationSection
             {
-                new EducationItem
+                Title = "Academic Excellence",
+                Subtitle = "Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget dolor aenean massa.",
+                Items = new List<EducationItem>
                 {
-                    Degree = "Master of Computer Science",
-                    Institution = "Tempus University",
-                    Year = "2015 - 2017",
-                    Description = "Cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus donec quam felis ultricies nec."
-                },
-                new EducationItem
-                {
-                    Degree = "Bachelor of Information Technology",
-                    Institution = "Rhoncus Institute of Technology",
-                    Year = "2011 - 2015",
-                    Description = "Nullam dictum felis eu pede mollis pretium integer tincidunt cras dapibus vivamus elementum semper nisi aenean vulputate."
-                },
-                new EducationItem
-                {
-                    Degree = "Certificate in Digital Innovation",
-                    Institution = "Ligula Academy",
-                    Year = "2020",
-                    Description = "Etiam sit amet orci eget eros faucibus tincidunt duis leo sed fringilla mauris sit amet nibh donec sodales sagittis magna."
+                    new EducationItem
+                    {
+                        Degree = "Master of Computer Science",
+                        Institution = "Tempus University",
+                        Year = "2015 - 2017",
+                        Description = "Cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus donec quam felis ultricies nec."
+                    },
+                    new EducationItem
+                    {
+                        Degree = "Bachelor of Information Technology",
+                        Institution = "Rhoncus Institute of Technology",
+                        Year = "2011 - 2015",
+                        Description = "Nullam dictum felis eu pede mollis pretium integer tincidunt cras dapibus vivamus elementum semper nisi aenean vulputate."
+                    },
+                    new EducationItem
+                    {
+                        Degree = "Certificate in Digital Innovation",
+                        Institution = "Ligula Academy",
+                        Year = "2020",
+                        Description = "Etiam sit amet orci eget eros faucibus tincidunt duis leo sed fringilla mauris sit amet nibh donec sodales sagittis magna."
+                    }
                 }
             }
         };
     }
 
-    // -------------------- Experience Section --------------------
+    // -------------------- Models --------------------
+    public class ResumeSectionModel
+    {
+        public string SectionTitle { get; set; } = string.Empty;
+        public string SectionSubtitle { get; set; } = string.Empty;
+        public ExperienceSection Experience { get; set; } = new();
+        public EducationSection Education { get; set; } = new();
+    }
+
     public class ExperienceSection
     {
         public string Title { get; set; } = string.Empty;
@@ -169,7 +182,6 @@
         public List<string> Achievements { get; set; } = new();
     }
 
-    // -------------------- Education Section --------------------
     public class EducationSection
     {
         public string Title { get; set; } = string.Empty;

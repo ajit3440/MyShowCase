@@ -133,86 +133,97 @@
     </div>
 </section><!-- /Testimonials Section -->
 @code {
-    private TestimonialsSectionModel Model = new();
-}
-@code {
-    public class TestimonialsSectionModel
+    private TestimonialsSectionModel Model { get; set; }
+
+    protected override void OnInitialized()
     {
-        // Section header
-        public string SectionTitle { get; set; } = "Testimonials";
-        public string SectionSubtitle { get; set; } =
-            "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit";
+        Model = GetTestimonialsSection();
+    }
 
-        // Critic/media reviews
-        public List<CriticReview> Critics { get; set; } = new()
+    private TestimonialsSectionModel GetTestimonialsSection()
+    {
+        return new TestimonialsSectionModel
         {
-            new CriticReview
+            SectionTitle = "Testimonials",
+            SectionSubtitle = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
+
+            Critics = new List<CriticReview>
             {
-                Source = "The New York Times",
-                Quote = "Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
-                Rating = 5
+                new CriticReview
+                {
+                    Source = "The New York Times",
+                    Quote = "Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
+                    Rating = 5
+                },
+                new CriticReview
+                {
+                    Source = "Washington Post",
+                    Quote = "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Nulla quis lorem ut libero malesuada feugiat.",
+                    Rating = 4.5
+                },
+                new CriticReview
+                {
+                    Source = "The Guardian",
+                    Quote = "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat.",
+                    Rating = 5
+                }
             },
-            new CriticReview
+
+            Testimonials = new List<TestimonialItem>
             {
-                Source = "Washington Post",
-                Quote = "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Nulla quis lorem ut libero malesuada feugiat.",
-                Rating = 4.5
+                new TestimonialItem
+                {
+                    Name = "Jane Smith",
+                    Title = "Book Enthusiast",
+                    ImageUrl = "assets/img/person/person-f-1.webp",
+                    Review = "Proin eget tortor risus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla quis lorem ut libero malesuada feugiat.",
+                    Rating = 5
+                },
+                new TestimonialItem
+                {
+                    Name = "Michael Johnson",
+                    Title = "Sci-Fi Blogger",
+                    ImageUrl = "assets/img/person/person-m-2.webp",
+                    Review = "Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Cras ultricies ligula sed magna dictum porta. Vestibulum ante ipsum primis in faucibus orci luctus.",
+                    Rating = 5
+                },
+                new TestimonialItem
+                {
+                    Name = "Emily Davis",
+                    Title = "Book Club President",
+                    ImageUrl = "assets/img/person/person-f-3.webp",
+                    Review = "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada.",
+                    Rating = 4.5
+                },
+                new TestimonialItem
+                {
+                    Name = "Robert Wilson",
+                    Title = "Literary Reviewer",
+                    ImageUrl = "assets/img/person/person-m-4.webp",
+                    Review = "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam id dui posuere blandit. Lorem ipsum dolor sit amet, consectetur.",
+                    Rating = 5
+                }
             },
-            new CriticReview
+
+            Summary = new OverallRating
             {
-                Source = "The Guardian",
-                Quote = "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat.",
-                Rating = 5
+                AverageRating = 4.8,
+                ReviewCount = 230,
+                Platforms = new() { "Goodreads", "Amazon", "Barnes & Noble" }
             }
-        };
-
-        // User testimonials (swiper)
-        public List<TestimonialItem> Testimonials { get; set; } = new()
-        {
-            new TestimonialItem
-            {
-                Name = "Jane Smith",
-                Title = "Book Enthusiast",
-                ImageUrl = "assets/img/person/person-f-1.webp",
-                Review = "Proin eget tortor risus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla quis lorem ut libero malesuada feugiat.",
-                Rating = 5
-            },
-            new TestimonialItem
-            {
-                Name = "Michael Johnson",
-                Title = "Sci-Fi Blogger",
-                ImageUrl = "assets/img/person/person-m-2.webp",
-                Review = "Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Cras ultricies ligula sed magna dictum porta. Vestibulum ante ipsum primis in faucibus orci luctus.",
-                Rating = 5
-            },
-            new TestimonialItem
-            {
-                Name = "Emily Davis",
-                Title = "Book Club President",
-                ImageUrl = "assets/img/person/person-f-3.webp",
-                Review = "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada.",
-                Rating = 4.5
-            },
-            new TestimonialItem
-            {
-                Name = "Robert Wilson",
-                Title = "Literary Reviewer",
-                ImageUrl = "assets/img/person/person-m-4.webp",
-                Review = "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam id dui posuere blandit. Lorem ipsum dolor sit amet, consectetur.",
-                Rating = 5
-            }
-        };
-
-        // Overall rating summary
-        public OverallRating Summary { get; set; } = new OverallRating
-        {
-            AverageRating = 4.8,
-            ReviewCount = 230,
-            Platforms = new() { "Goodreads", "Amazon", "Barnes & Noble" }
         };
     }
 
-    // --- Critic reviews ---
+    // --- Models ---
+    public class TestimonialsSectionModel
+    {
+        public string SectionTitle { get; set; } = string.Empty;
+        public string SectionSubtitle { get; set; } = string.Empty;
+        public List<CriticReview> Critics { get; set; } = new();
+        public List<TestimonialItem> Testimonials { get; set; } = new();
+        public OverallRating Summary { get; set; } = new();
+    }
+
     public class CriticReview
     {
         public string Source { get; set; } = string.Empty;
@@ -220,7 +231,6 @@
         public double Rating { get; set; } = 5.0;
     }
 
-    // --- User testimonials ---
     public class TestimonialItem
     {
         public string Name { get; set; } = string.Empty;
@@ -230,7 +240,6 @@
         public double Rating { get; set; } = 5.0;
     }
 
-    // --- Overall rating ---
     public class OverallRating
     {
         public double AverageRating { get; set; }
@@ -238,6 +247,7 @@
         public List<string> Platforms { get; set; } = new();
     }
 }
+
 
 <script>
     function initSwiper() {

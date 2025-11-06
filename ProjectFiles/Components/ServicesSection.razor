@@ -34,72 +34,85 @@
 
 </section><!-- /Services Section -->
 @code {
-    private ServicesSectionModel Model = new();
-    public class ServicesSectionModel
-    {
-        // Section header
-        public string SectionTitle { get; set; } = "Services";
-        public string SectionSubtitle { get; set; } =
-            "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit";
+    private ServicesSectionModel Model { get; set; }
 
-        // Service cards
-        public List<ServiceCard> Services { get; set; } = new()
+    protected override void OnInitialized()
+    {
+        Model = GetServicesSection();
+    }
+
+    private ServicesSectionModel GetServicesSection()
+    {
+        return new ServicesSectionModel
         {
-            new ServiceCard
+            SectionTitle = "Services",
+            SectionSubtitle = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
+            Services = new List<ServiceCard>
             {
-                Icon = "bi bi-stack",
-                Title = "Digital Solutions",
-                Description = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa.",
-                LinkText = "Learn More",
-                LinkUrl = "#",
-                AOSDelay = 100
-            },
-            new ServiceCard
-            {
-                Icon = "bi bi-shield-check",
-                Title = "Secure Systems",
-                Description = "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.",
-                LinkText = "Learn More",
-                LinkUrl = "#",
-                AOSDelay = 200
-            },
-            new ServiceCard
-            {
-                Icon = "bi bi-graph-up",
-                Title = "Growth Strategy",
-                Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum qui dolorem.",
-                LinkText = "Learn More",
-                LinkUrl = "#",
-                AOSDelay = 300
-            },
-            new ServiceCard
-            {
-                Icon = "bi bi-cpu",
-                Title = "AI Integration",
-                Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.",
-                LinkText = "Learn More",
-                LinkUrl = "#",
-                AOSDelay = 100
-            },
-            new ServiceCard
-            {
-                Icon = "bi bi-cloud-arrow-up",
-                Title = "Cloud Services",
-                Description = "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos.",
-                LinkText = "Learn More",
-                LinkUrl = "#",
-                AOSDelay = 200
-            },
-            new ServiceCard
-            {
-                Icon = "bi bi-gear",
-                Title = "Process Automation",
-                Description = "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.",
-                LinkText = "Learn More",
-                LinkUrl = "#",
-                AOSDelay = 300
+                new ServiceCard
+                {
+                    Icon = "bi bi-stack",
+                    Title = "Digital Solutions",
+                    Description = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa.",
+                    LinkText = "Learn More",
+                    LinkUrl = "#",
+                    AOSDelay = 100
+                },
+                new ServiceCard
+                {
+                    Icon = "bi bi-shield-check",
+                    Title = "Secure Systems",
+                    Description = "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.",
+                    LinkText = "Learn More",
+                    LinkUrl = "#",
+                    AOSDelay = 200
+                },
+                new ServiceCard
+                {
+                    Icon = "bi bi-graph-up",
+                    Title = "Growth Strategy",
+                    Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum qui dolorem.",
+                    LinkText = "Learn More",
+                    LinkUrl = "#",
+                    AOSDelay = 300
+                },
+                new ServiceCard
+                {
+                    Icon = "bi bi-cpu",
+                    Title = "AI Integration",
+                    Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.",
+                    LinkText = "Learn More",
+                    LinkUrl = "#",
+                    AOSDelay = 100
+                },
+                new ServiceCard
+                {
+                    Icon = "bi bi-cloud-arrow-up",
+                    Title = "Cloud Services",
+                    Description = "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos.",
+                    LinkText = "Learn More",
+                    LinkUrl = "#",
+                    AOSDelay = 200
+                },
+                new ServiceCard
+                {
+                    Icon = "bi bi-gear",
+                    Title = "Process Automation",
+                    Description = "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.",
+                    LinkText = "Learn More",
+                    LinkUrl = "#",
+                    AOSDelay = 300
+                }
             }
         };
+    }
+
+    // --- Models ---
+    public class ServicesSectionModel
+    {
+        public string SectionTitle { get; set; } = string.Empty;
+        public string SectionSubtitle { get; set; } = string.Empty;
+        public List<ServiceCard> Services { get; set; } = new();
     }
 
     public class ServiceCard

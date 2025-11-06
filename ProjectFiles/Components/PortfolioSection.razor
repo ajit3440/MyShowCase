@@ -60,122 +60,135 @@
 
 </section><!-- /Portfolio Section -->
 @code {
-    private PortfolioSectionModel Model = new();
-    public class PortfolioSectionModel
+    private PortfolioSectionModel Model { get; set; }
+
+    protected override void OnInitialized()
     {
-        // Section header
-        public string SectionTitle { get; set; } = "Portfolio";
-        public string SectionSubtitle { get; set; } =
-            "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit";
+        Model = GetPortfolioSection();
+    }
 
-        // Category filters
-        public List<PortfolioFilter> Filters { get; set; } = new()
+    private PortfolioSectionModel GetPortfolioSection()
+    {
+        return new PortfolioSectionModel
         {
-            new PortfolioFilter { FilterClass = "*", Label = "All Projects", Icon = "bi bi-grid-3x3", IsActive = true },
-            new PortfolioFilter { FilterClass = ".filter-ui", Label = "UI/UX" },
-            new PortfolioFilter { FilterClass = ".filter-development", Label = "Development" },
-            new PortfolioFilter { FilterClass = ".filter-photography", Label = "Photography" },
-            new PortfolioFilter { FilterClass = ".filter-marketing", Label = "Marketing" }
-        };
+            SectionTitle = "Portfolio",
+            SectionSubtitle = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
 
-        // Portfolio items
-        public List<PortfolioItem> Items { get; set; } = new()
-        {
-            new PortfolioItem
+            Filters = new List<PortfolioFilter>
             {
-                CategoryClass = "filter-ui",
-                CategoryName = "UI/UX Design",
-                Title = "Mobile Banking App",
-                ImageUrl = "assets/img/portfolio/portfolio-1.webp",
-                LightboxDescription = "Praesent commodo cursus magna, vel scelerisque nisl consectetur.",
-                DetailsPageUrl = "portfolio-details"
+                new PortfolioFilter { FilterClass = "*", Label = "All Projects", Icon = "bi bi-grid-3x3", IsActive = true },
+                new PortfolioFilter { FilterClass = ".filter-ui", Label = "UI/UX" },
+                new PortfolioFilter { FilterClass = ".filter-development", Label = "Development" },
+                new PortfolioFilter { FilterClass = ".filter-photography", Label = "Photography" },
+                new PortfolioFilter { FilterClass = ".filter-marketing", Label = "Marketing" }
             },
-            new PortfolioItem
+
+            Items = new List<PortfolioItem>
             {
-                CategoryClass = "filter-development",
-                CategoryName = "Development",
-                Title = "E-Learning Platform",
-                ImageUrl = "assets/img/portfolio/portfolio-10.webp",
-                LightboxDescription = "Nulla vitae elit libero, a pharetra augue mollis interdum.",
-                DetailsPageUrl = "portfolio-details"
-            },
-            new PortfolioItem
-            {
-                CategoryClass = "filter-photography",
-                CategoryName = "Photography",
-                Title = "Urban Architecture",
-                ImageUrl = "assets/img/portfolio/portfolio-7.webp",
-                LightboxDescription = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
-                DetailsPageUrl = "portfolio-details"
-            },
-            new PortfolioItem
-            {
-                CategoryClass = "filter-marketing",
-                CategoryName = "Marketing",
-                Title = "Social Media Campaign",
-                ImageUrl = "assets/img/portfolio/portfolio-4.webp",
-                LightboxDescription = "Quis autem vel eum iure reprehenderit qui in ea voluptate.",
-                DetailsPageUrl = "portfolio-details"
-            },
-            new PortfolioItem
-            {
-                CategoryClass = "filter-ui",
-                CategoryName = "UI/UX Design",
-                Title = "Smart Home Interface",
-                ImageUrl = "assets/img/portfolio/portfolio-2.webp",
-                LightboxDescription = "At vero eos et accusamus et iusto odio dignissimos ducimus.",
-                DetailsPageUrl = "portfolio-details"
-            },
-            new PortfolioItem
-            {
-                CategoryClass = "filter-development",
-                CategoryName = "Development",
-                Title = "Cloud Management System",
-                ImageUrl = "assets/img/portfolio/portfolio-11.webp",
-                LightboxDescription = "Temporibus autem quibusdam et aut officiis debitis.",
-                DetailsPageUrl = "portfolio-details"
-            },
-            new PortfolioItem
-            {
-                CategoryClass = "filter-photography",
-                CategoryName = "Photography",
-                Title = "Nature Collection",
-                ImageUrl = "assets/img/portfolio/portfolio-8.webp",
-                LightboxDescription = "Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-                DetailsPageUrl = "portfolio-details"
-            },
-            new PortfolioItem
-            {
-                CategoryClass = "filter-marketing",
-                CategoryName = "Marketing",
-                Title = "Brand Strategy",
-                ImageUrl = "assets/img/portfolio/portfolio-5.webp",
-                LightboxDescription = "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.",
-                DetailsPageUrl = "portfolio-details"
+                new PortfolioItem
+                {
+                    CategoryClass = "filter-ui",
+                    CategoryName = "UI/UX Design",
+                    Title = "Mobile Banking App",
+                    ImageUrl = "assets/img/portfolio/portfolio-1.webp",
+                    LightboxDescription = "Praesent commodo cursus magna, vel scelerisque nisl consectetur.",
+                    DetailsPageUrl = "portfolio-details"
+                },
+                new PortfolioItem
+                {
+                    CategoryClass = "filter-development",
+                    CategoryName = "Development",
+                    Title = "E-Learning Platform",
+                    ImageUrl = "assets/img/portfolio/portfolio-10.webp",
+                    LightboxDescription = "Nulla vitae elit libero, a pharetra augue mollis interdum.",
+                    DetailsPageUrl = "portfolio-details"
+                },
+                new PortfolioItem
+                {
+                    CategoryClass = "filter-photography",
+                    CategoryName = "Photography",
+                    Title = "Urban Architecture",
+                    ImageUrl = "assets/img/portfolio/portfolio-7.webp",
+                    LightboxDescription = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+                    DetailsPageUrl = "portfolio-details"
+                },
+                new PortfolioItem
+                {
+                    CategoryClass = "filter-marketing",
+                    CategoryName = "Marketing",
+                    Title = "Social Media Campaign",
+                    ImageUrl = "assets/img/portfolio/portfolio-4.webp",
+                    LightboxDescription = "Quis autem vel eum iure reprehenderit qui in ea voluptate.",
+                    DetailsPageUrl = "portfolio-details"
+                },
+                new PortfolioItem
+                {
+                    CategoryClass = "filter-ui",
+                    CategoryName = "UI/UX Design",
+                    Title = "Smart Home Interface",
+                    ImageUrl = "assets/img/portfolio/portfolio-2.webp",
+                    LightboxDescription = "At vero eos et accusamus et iusto odio dignissimos ducimus.",
+                    DetailsPageUrl = "portfolio-details"
+                },
+                new PortfolioItem
+                {
+                    CategoryClass = "filter-development",
+                    CategoryName = "Development",
+                    Title = "Cloud Management System",
+                    ImageUrl = "assets/img/portfolio/portfolio-11.webp",
+                    LightboxDescription = "Temporibus autem quibusdam et aut officiis debitis.",
+                    DetailsPageUrl = "portfolio-details"
+                },
+                new PortfolioItem
+                {
+                    CategoryClass = "filter-photography",
+                    CategoryName = "Photography",
+                    Title = "Nature Collection",
+                    ImageUrl = "assets/img/portfolio/portfolio-8.webp",
+                    LightboxDescription = "Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
+                    DetailsPageUrl = "portfolio-details"
+                },
+                new PortfolioItem
+                {
+                    CategoryClass = "filter-marketing",
+                    CategoryName = "Marketing",
+                    Title = "Brand Strategy",
+                    ImageUrl = "assets/img/portfolio/portfolio-5.webp",
+                    LightboxDescription = "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.",
+                    DetailsPageUrl = "portfolio-details"
+                }
             }
         };
     }
 
-    // --- Filter buttons (All, UI/UX, etc.) ---
+    // --- Models ---
+    public class PortfolioSectionModel
+    {
+        public string SectionTitle { get; set; } = string.Empty;
+        public string SectionSubtitle { get; set; } = string.Empty;
+        public List<PortfolioFilter> Filters { get; set; } = new();
+        public List<PortfolioItem> Items { get; set; } = new();
+    }
+
     public class PortfolioFilter
     {
-        public string FilterClass { get; set; } = string.Empty; // e.g. ".filter-ui"
-        public string Label { get; set; } = string.Empty;        // e.g. "UI/UX"
-        public string? Icon { get; set; }                        // e.g. "bi bi-grid-3x3"
+        public string FilterClass { get; set; } = string.Empty;
+        public string Label { get; set; } = string.Empty;
+        public string? Icon { get; set; }
         public bool IsActive { get; set; } = false;
     }
 
-    // --- Portfolio items ---
     public class PortfolioItem
     {
-        public string CategoryClass { get; set; } = string.Empty;  // e.g. "filter-ui"
-        public string CategoryName { get; set; } = string.Empty;   // e.g. "UI/UX Design"
+        public string CategoryClass { get; set; } = string.Empty;
+        public string CategoryName { get; set; } = string.Empty;
         public string Title { get; set; } = string.Empty;
         public string ImageUrl { get; set; } = string.Empty;
         public string LightboxDescription { get; set; } = string.Empty;
         public string DetailsPageUrl { get; set; } = string.Empty;
     }
 }
+
 <script>
       document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
       let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';

@@ -75,83 +75,97 @@
 </section>
 
 @code {
-    private SkillsSectionModel Model = new();
-    public class SkillsSectionModel
+    private SkillsSectionModel Model { get; set; }
+
+    protected override void OnInitialized()
     {
-        // Section title and intro summary
-        public string SectionTitle { get; set; } = "Skills";
-        public string SummaryTitle { get; set; } = "Professional Expertise";
-        public string SummaryDescription { get; set; } =
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.";
+        Model = GetSkillsSection();
+    }
 
-        // Left column: grouped skill categories
-        public List<SkillCategory> Categories { get; set; } = new()
+    private SkillsSectionModel GetSkillsSection()
+    {
+        return new SkillsSectionModel
         {
-            new SkillCategory
+            SectionTitle = "Skills",
+            SummaryTitle = "Professional Expertise",
+            SummaryDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+
+            Categories = new List<SkillCategory>
             {
-                Icon = "bi bi-code-slash",
-                Title = "Frontend Development",
-                Skills = new()
+                new SkillCategory
                 {
-                    new SkillItem { Name = "HTML/CSS", Percentage = 95 },
-                    new SkillItem { Name = "JavaScript", Percentage = 88 },
-                    new SkillItem { Name = "Vue.js", Percentage = 82 }
+                    Icon = "bi bi-code-slash",
+                    Title = "Frontend Development",
+                    Skills = new()
+                    {
+                        new SkillItem { Name = "HTML/CSS", Percentage = 95 },
+                        new SkillItem { Name = "JavaScript", Percentage = 88 },
+                        new SkillItem { Name = "Vue.js", Percentage = 82 }
+                    }
+                },
+                new SkillCategory
+                {
+                    Icon = "bi bi-server",
+                    Title = "Backend Development",
+                    Skills = new()
+                    {
+                        new SkillItem { Name = "PHP", Percentage = 78 },
+                        new SkillItem { Name = "Laravel", Percentage = 75 },
+                        new SkillItem { Name = "MySQL", Percentage = 72 }
+                    }
+                },
+                new SkillCategory
+                {
+                    Icon = "bi bi-palette",
+                    Title = "Design & Tools",
+                    Skills = new()
+                    {
+                        new SkillItem { Name = "Figma", Percentage = 85 },
+                        new SkillItem { Name = "Photoshop", Percentage = 70 },
+                        new SkillItem { Name = "Illustrator", Percentage = 68 }
+                    }
+                },
+                new SkillCategory
+                {
+                    Icon = "bi bi-cloud",
+                    Title = "Cloud & DevOps",
+                    Skills = new()
+                    {
+                        new SkillItem { Name = "AWS", Percentage = 76 },
+                        new SkillItem { Name = "Docker", Percentage = 73 },
+                        new SkillItem { Name = "Git", Percentage = 90 }
+                    }
                 }
             },
-            new SkillCategory
+
+            Stats = new List<SummaryStat>
             {
-                Icon = "bi bi-server",
-                Title = "Backend Development",
-                Skills = new()
-                {
-                    new SkillItem { Name = "PHP", Percentage = 78 },
-                    new SkillItem { Name = "Laravel", Percentage = 75 },
-                    new SkillItem { Name = "MySQL", Percentage = 72 }
-                }
+                new SummaryStat { Icon = "bi bi-trophy", Number = "5+", Label = "Years Experience" },
+                new SummaryStat { Icon = "bi bi-diagram-3", Number = "50+", Label = "Projects Completed" },
+                new SummaryStat { Icon = "bi bi-people", Number = "30+", Label = "Happy Clients" }
             },
-            new SkillCategory
+
+            Certifications = new List<SkillBadge>
             {
-                Icon = "bi bi-palette",
-                Title = "Design & Tools",
-                Skills = new()
-                {
-                    new SkillItem { Name = "Figma", Percentage = 85 },
-                    new SkillItem { Name = "Photoshop", Percentage = 70 },
-                    new SkillItem { Name = "Illustrator", Percentage = 68 }
-                }
-            },
-            new SkillCategory
-            {
-                Icon = "bi bi-cloud",
-                Title = "Cloud & DevOps",
-                Skills = new()
-                {
-                    new SkillItem { Name = "AWS", Percentage = 76 },
-                    new SkillItem { Name = "Docker", Percentage = 73 },
-                    new SkillItem { Name = "Git", Percentage = 90 }
-                }
+                new SkillBadge { Name = "AWS Certified" },
+                new SkillBadge { Name = "Laravel Expert" },
+                new SkillBadge { Name = "Vue.js Developer" },
+                new SkillBadge { Name = "UI/UX Design" }
             }
-        };
-
-        // Right column: summary stats
-        public List<SummaryStat> Stats { get; set; } = new()
-        {
-            new SummaryStat { Icon = "bi bi-trophy", Number = "5+", Label = "Years Experience" },
-            new SummaryStat { Icon = "bi bi-diagram-3", Number = "50+", Label = "Projects Completed" },
-            new SummaryStat { Icon = "bi bi-people", Number = "30+", Label = "Happy Clients" }
-        };
-
-        // Certifications or skill badges
-        public List<SkillBadge> Certifications { get; set; } = new()
-        {
-            new SkillBadge { Name = "AWS Certified" },
-            new SkillBadge { Name = "Laravel Expert" },
-            new SkillBadge { Name = "Vue.js Developer" },
-            new SkillBadge { Name = "UI/UX Design" }
         };
     }
 
-    // Category e.g. "Frontend Development"
+    // --- Models ---
+    public class SkillsSectionModel
+    {
+        public string SectionTitle { get; set; } = string.Empty;
+        public string SummaryTitle { get; set; } = string.Empty;
+        public string SummaryDescription { get; set; } = string.Empty;
+        public List<SkillCategory> Categories { get; set; } = new();
+        public List<SummaryStat> Stats { get; set; } = new();
+        public List<SkillBadge> Certifications { get; set; } = new();
+    }
+
     public class SkillCategory
     {
         public string Icon { get; set; } = string.Empty;
@@ -159,14 +173,12 @@
         public List<SkillItem> Skills { get; set; } = new();
     }
 
-    // Individual skill item inside category
     public class SkillItem
     {
         public string Name { get; set; } = string.Empty;
         public int Percentage { get; set; }
     }
 
-    // Right-side summary stat (e.g. “5+ Years Experience”)
     public class SummaryStat
     {
         public string Icon { get; set; } = string.Empty;
@@ -174,9 +186,9 @@
         public string Label { get; set; } = string.Empty;
     }
 
-    // Certification badges
     public class SkillBadge
     {
         public string Name { get; set; } = string.Empty;
     }
 }
+

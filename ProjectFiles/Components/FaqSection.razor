@@ -34,55 +34,68 @@
 
 </section><!-- /Faq Section -->
 @code {
-    private FaqSectionModel Model = new();
-    public class FaqSectionModel
-    {
-        // Section Header
-        public string SectionTitle { get; set; } = "Frequently Asked Questions";
-        public string SectionSubtitle { get; set; } =
-            "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit";
+    private FaqSectionModel Model { get; set; }
 
-        // List of FAQs
-        public List<FaqItem> Faqs { get; set; } = new()
+    protected override void OnInitialized()
+    {
+        Model = GetFaqSection();
+    }
+
+    private FaqSectionModel GetFaqSection()
+    {
+        return new FaqSectionModel
         {
-            new FaqItem
+            SectionTitle = "Frequently Asked Questions",
+            SectionSubtitle = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
+            Faqs = new List<FaqItem>
             {
-                Question = "Non consectetur a erat nam at lectus urna duis?",
-                Answer = "Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.",
-                IsActive = true
-            },
-            new FaqItem
-            {
-                Question = "Feugiat scelerisque varius morbi enim nunc faucibus?",
-                Answer = "Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui."
-            },
-            new FaqItem
-            {
-                Question = "Dolor sit amet consectetur adipiscing elit pellentesque?",
-                Answer = "Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis."
-            },
-            new FaqItem
-            {
-                Question = "Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?",
-                Answer = "Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui."
-            },
-            new FaqItem
-            {
-                Question = "Tempus quam pellentesque nec nam aliquam sem et tortor?",
-                Answer = "Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in."
-            },
-            new FaqItem
-            {
-                Question = "Perspiciatis quod quo quos nulla quo illum ullam?",
-                Answer = "Enim ea facilis quaerat voluptas quidem et dolorem. Quis et consequatur non sed in suscipit sequi. Distinctio ipsam dolore et."
+                new FaqItem
+                {
+                    Question = "Non consectetur a erat nam at lectus urna duis?",
+                    Answer = "Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.",
+                    IsActive = true
+                },
+                new FaqItem
+                {
+                    Question = "Feugiat scelerisque varius morbi enim nunc faucibus?",
+                    Answer = "Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui."
+                },
+                new FaqItem
+                {
+                    Question = "Dolor sit amet consectetur adipiscing elit pellentesque?",
+                    Answer = "Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis."
+                },
+                new FaqItem
+                {
+                    Question = "Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?",
+                    Answer = "Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui."
+                },
+                new FaqItem
+                {
+                    Question = "Tempus quam pellentesque nec nam aliquam sem et tortor?",
+                    Answer = "Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in."
+                },
+                new FaqItem
+                {
+                    Question = "Perspiciatis quod quo quos nulla quo illum ullam?",
+                    Answer = "Enim ea facilis quaerat voluptas quidem et dolorem. Quis et consequatur non sed in suscipit sequi. Distinctio ipsam dolore et."
+                }
             }
         };
+    }
+
+    // Models
+    public class FaqSectionModel
+    {
+        public string SectionTitle { get; set; } = string.Empty;
+        public string SectionSubtitle { get; set; } = string.Empty;
+        public List<FaqItem> Faqs { get; set; } = new();
     }
 
     public class FaqItem
     {
         public string Question { get; set; } = string.Empty;
         public string Answer { get; set; } = string.Empty;
-        public bool IsActive { get; set; } = false; // for default open item
+        public bool IsActive { get; set; } = false;
     }
 }
