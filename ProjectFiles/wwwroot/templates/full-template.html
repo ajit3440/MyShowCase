@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Creative Portfolio Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --theme-primary: #5865f2;
+            --theme-primary-rgb: 88, 101, 242;
+            --theme-dark: #111729;
+            --theme-muted: #6c7a92;
+            --theme-bg: #f3f5fb;
+            --section-pad-y: 6rem;
+        }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--theme-bg);
+            color: var(--theme-dark);
+            scroll-behavior: smooth;
+        }
+        .navbar-brand span {
+            color: var(--theme-primary);
+        }
+        .btn-theme {
+            background: var(--theme-primary);
+            color: #fff;
+            border: none;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+        .btn-theme:hover {
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(var(--theme-primary-rgb), .18);
+        }
+        .section-title {
+            max-width: 720px;
+            margin: 0 auto 4rem auto;
+            text-align: center;
+        }
+        .section-title .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            font-weight: 600;
+            color: rgba(var(--theme-primary-rgb), .7);
+            margin-bottom: .75rem;
+        }
+        .section-title h2 {
+            font-weight: 700;
+            font-size: clamp(2rem, 4vw, 2.75rem);
+        }
+        .section-title p {
+            color: var(--theme-muted);
+        }
+        section {
+            padding: var(--section-pad-y) 0;
+        }
+        .bg-gradient {
+            background: linear-gradient(135deg, rgba(var(--theme-primary-rgb), .12) 0%, rgba(17, 23, 41, .05) 100%);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container py-2">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="#hero">
+                <i class="bi bi-boxes me-2 fs-3 text-primary"></i>
+                <span>ShowCase</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-medium">
+                    <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <a class="btn btn-theme ms-lg-4 mt-3 mt-lg-0" href="#contact">Let’s Talk</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header id="hero" class="bg-gradient">
+        <div class="container py-5 py-lg-6">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill px-3 py-2 mb-3">Creative Developer</span>
+                    <h1 class="display-4 fw-bold mb-3">Transforming ideas into immersive digital experiences.</h1>
+                    <p class="lead text-secondary mb-4">I help brands craft memorable products by blending strategy, design, and engineering into thoughtful, performant experiences.</p>
+                    <div class="d-flex flex-column flex-sm-row gap-3">
+                        <a href="#portfolio" class="btn btn-theme btn-lg px-4">View Portfolio</a>
+                        <a href="#services" class="btn btn-outline-secondary btn-lg px-4">Explore Services</a>
+                    </div>
+                    <div class="d-flex gap-4 mt-5">
+                        <div>
+                            <h3 class="fw-bold mb-0">150+</h3>
+                            <small class="text-muted">Projects Delivered</small>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold mb-0">5+</h3>
+                            <small class="text-muted">Years Experience</small>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold mb-0">30+</h3>
+                            <small class="text-muted">Happy Clients</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" class="w-100 h-100 object-fit-cover" alt="Creative workspace" />
+                        </div>
+                        <div class="card shadow-lg border-0 position-absolute bottom-0 end-0 translate-middle p-3" style="max-width: 240px;">
+                            <div class="d-flex align-items-center">
+                                <div class="avatar flex-shrink-0 rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3" style="width: 54px; height: 54px;">
+                                    <i class="bi bi-lightning-charge fs-4"></i>
+                                </div>
+                                <div>
+                                    <strong>Product Strategy</strong>
+                                    <p class="text-muted small mb-0">Aligning user insights with business goals.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Placeholder Sections -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <span class="eyebrow">Capabilities</span>
+                <h2>Services tailored to ship modern digital products.</h2>
+                <p>Strategy, design, and engineering combine to craft experiences that resonate and perform.</p>
+            </div>
+            <div class="row g-4" id="services-grid">
+                <!-- dynamic cards will go here -->
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="bg-white">
+        <div class="container">
+            <div class="section-title">
+                <span class="eyebrow">Selected Work</span>
+                <h2>Recent projects that deliver results.</h2>
+                <p>Each project is a collaboration aimed at solving high-impact problems with elegant solutions.</p>
+            </div>
+            <div class="row g-4" id="portfolio-grid">
+                <!-- portfolio cards -->
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <span class="eyebrow">Social Proof</span>
+                <h2>Clients and partners say great things.</h2>
+                <p>Relationships built on transparency, trust, and results.</p>
+            </div>
+            <div class="row g-4" id="testimonials-grid">
+                <!-- testimonials slider placeholder -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-white">
+        <div class="container">
+            <div class="section-title">
+                <span class="eyebrow">Let’s Collaborate</span>
+                <h2>Tell me about your next big idea.</h2>
+                <p>Drop a note and let’s figure out how we can build something remarkable together.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-8">
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control form-control-lg" placeholder="Jane Doe" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control form-control-lg" placeholder="jane@example.com" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Project Details</label>
+                            <textarea class="form-control form-control-lg" rows="5" placeholder="Tell me about your goals, timeline, and budget." required></textarea>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-theme btn-lg px-5">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 border-top bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <strong>ShowCase Studio</strong><br />
+                    <small class="text-muted">© 2025. Crafted with care and caffeine.</small>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-center justify-content-md-end gap-3">
+                        <a href="#" class="text-muted"><i class="bi bi-twitter fs-5"></i></a>
+                        <a href="#" class="text-muted"><i class="bi bi-linkedin fs-5"></i></a>
+                        <a href="#" class="text-muted"><i class="bi bi-github fs-5"></i></a>
+                        <a href="#" class="text-muted"><i class="bi bi-instagram fs-5"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        // Placeholder JS hooks for future dynamic population
+        document.addEventListener('DOMContentLoaded', function () {
+            const services = [
+                { icon: 'bi-rocket-takeoff', title: 'Product Strategy', desc: 'Define vision, roadmap, and measurable goals for your product.' },
+                { icon: 'bi-palette', title: 'Experience Design', desc: 'Craft human-centered, accessible interfaces that delight users.' },
+                { icon: 'bi-code-slash', title: 'Engineering', desc: 'Ship robust, maintainable frontends with best practices baked in.' },
+            ];
+
+            const servicesGrid = document.getElementById('services-grid');
+            services.forEach(service => {
+                servicesGrid.insertAdjacentHTML('beforeend', `
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body p-4">
+                                <span class="badge rounded-circle bg-primary-subtle text-primary-emphasis p-3 mb-3">
+                                    <i class="bi ${service.icon} fs-4"></i>
+                                </span>
+                                <h5 class="fw-bold">${service.title}</h5>
+                                <p class="text-muted">${service.desc}</p>
+                                <a href="#contact" class="fw-semibold">Start a project <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                `);
+            });
+        });
+    </script>
+</body>
+</html>

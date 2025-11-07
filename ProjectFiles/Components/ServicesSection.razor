@@ -1,4 +1,5 @@
 ﻿@using MyShowCase.Data.ServicesSectionModels
+@using MyShowCase.Data
  <!-- ServicesSection -->
 <section id="services" class="services section">
 
@@ -36,10 +37,12 @@
 </section><!-- /Services Section -->
 @code {
     private ServicesSectionModel Model { get; set; }
+    [Inject] private ContentStore Store { get; set; }
+    [Parameter] public string? ContentId { get; set; }
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        Model = GetServicesSection();
+        Model = await Store.GetAsync<ServicesSectionModel>("ServicesSection", ContentId) ?? GetServicesSection();
     }
 
     private ServicesSectionModel GetServicesSection()
@@ -47,14 +50,14 @@
         return new ServicesSectionModel
         {
             SectionTitle = "Services",
-            SectionSubtitle = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
+            SectionSubtitle = "Practical, end‑to‑end services to plan, build, and scale your product.",
             Services = new List<ServiceCard>
             {
                 new ServiceCard
                 {
                     Icon = "bi bi-stack",
                     Title = "Digital Solutions",
-                    Description = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa.",
+                    Description = "From idea to launch: user‑focused websites and web apps built for speed and reliability.",
                     LinkText = "Learn More",
                     LinkUrl = "#",
                     AOSDelay = 100
@@ -63,7 +66,7 @@
                 {
                     Icon = "bi bi-shield-check",
                     Title = "Secure Systems",
-                    Description = "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.",
+                    Description = "Security best practices baked in — authentication, authorization, and data protection by default.",
                     LinkText = "Learn More",
                     LinkUrl = "#",
                     AOSDelay = 200
@@ -72,7 +75,7 @@
                 {
                     Icon = "bi bi-graph-up",
                     Title = "Growth Strategy",
-                    Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum qui dolorem.",
+                    Description = "Optimize performance, SEO, and UX to convert more users and retain customers.",
                     LinkText = "Learn More",
                     LinkUrl = "#",
                     AOSDelay = 300
@@ -81,7 +84,7 @@
                 {
                     Icon = "bi bi-cpu",
                     Title = "AI Integration",
-                    Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.",
+                    Description = "Integrate practical AI features that enhance workflows without adding complexity.",
                     LinkText = "Learn More",
                     LinkUrl = "#",
                     AOSDelay = 100
@@ -90,7 +93,7 @@
                 {
                     Icon = "bi bi-cloud-arrow-up",
                     Title = "Cloud Services",
-                    Description = "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos.",
+                    Description = "Deploy, monitor, and scale with confidence using modern cloud tooling and automation.",
                     LinkText = "Learn More",
                     LinkUrl = "#",
                     AOSDelay = 200
@@ -99,7 +102,7 @@
                 {
                     Icon = "bi bi-gear",
                     Title = "Process Automation",
-                    Description = "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.",
+                    Description = "Automate repetitive workflows to save time and reduce errors across your operations.",
                     LinkText = "Learn More",
                     LinkUrl = "#",
                     AOSDelay = 300

@@ -1,0 +1,141 @@
+@page "/admin/content"
+@using System.Text.Json
+@using MyShowCase.Data
+@using MyShowCase.Data.AboutSectionModels
+@using MyShowCase.Data.ServicesSectionModels
+@using MyShowCase.Data.SkillsSectionModels
+@using MyShowCase.Data.FaqSectionModels
+@using MyShowCase.Data.TestimonialsSectionModels
+@using MyShowCase.Data.PortfolioSectionModels
+@using MyShowCase.Data.ResumeSectionModels
+
+<h2>Content Editor</h2>
+
+<div class="mb-3">
+	<label class="form-label">Section</label>
+	<select class="form-select" value="@selectedKey" @onchange="OnSectionChanged">
+		<option value="AboutSection">About</option>
+		<option value="ServicesSection">Services</option>
+		<option value="SkillsSection">Skills</option>
+		<option value="FaqSection">FAQ</option>
+		<option value="TestimonialsSection">Testimonials</option>
+		<option value="PortfolioSection">Portfolio</option>
+		<option value="ResumeSection">Resume</option>
+	</select>
+</div>
+
+<div class="mb-3">
+	<label class="form-label">Id (optional)</label>
+	<input class="form-control" value="@contentId" @onchange="OnIdChanged" placeholder="e.g. demo1" />
+</div>
+
+<div class="mb-3">
+	<label class="form-label">JSON</label>
+	<textarea class="form-control" rows="20" @bind="json"></textarea>
+</div>
+
+<div class="d-flex gap-2">
+	<button class="btn btn-primary" @onclick="SaveAsync" disabled="@isBusy">Save</button>
+	<button class="btn btn-outline-danger" @onclick="DeleteAsync" disabled="@isBusy">Delete</button>
+	@if (!string.IsNullOrEmpty(message))
+	{
+		<span class="ms-2">@message</span>
+	}
+</div>
+
+@code {
+	[Inject] private ContentStore Store { get; set; }
+
+	private string selectedKey = "AboutSection";
+	private string? contentId;
+	private string json = string.Empty;
+	private string? message;
+	private bool isBusy = false;
+
+	protected override async Task OnInitializedAsync()
+	{
+		await LoadAsync();
+	}
+
+	private async Task OnSectionChanged(ChangeEventArgs e)
+	{
+		selectedKey = e.Value?.ToString() ?? "AboutSection";
+		await LoadAsync();
+	}
+
+	private async Task OnIdChanged(ChangeEventArgs e)
+	{
+		contentId = e.Value?.ToString();
+		await LoadAsync();
+	}
+
+	private async Task LoadAsync()
+	{
+		isBusy = true;
+		message = null;
+		try
+		{
+			var fromDb = await Store.GetAsync<string>(selectedKey, contentId);
+			json = fromDb ?? await GetSeedJsonAsync(selectedKey);
+		}
+		finally
+		{
+			isBusy = false;
+		}
+	}
+
+	private async Task<string> GetSeedJsonAsync(string key)
+	{
+		object seed = key switch
+		{
+			"AboutSection" => new AboutSectionModel(),
+			"ServicesSection" => new ServicesSectionModel(),
+			"SkillsSection" => new SkillsSectionModel(),
+			"FaqSection" => new FaqSectionModel(),
+			"TestimonialsSection" => new TestimonialsSectionModel(),
+			"PortfolioSection" => new PortfolioSectionModel(),
+			"ResumeSection" => new ResumeSectionModel(),
+			_ => new { }
+		};
+		return JsonSerializer.Serialize(seed, new JsonSerializerOptions(JsonSerializerDefaults.Web) { WriteIndented = true });
+	}
+
+	private async Task SaveAsync()
+	{
+		isBusy = true;
+		message = null;
+		try
+		{
+			await Store.UpsertAsync(selectedKey, contentId, json);
+			message = "Saved.";
+		}
+		catch (Exception ex)
+		{
+			message = ex.Message;
+		}
+		finally
+		{
+			isBusy = false;
+		}
+	}
+
+	private async Task DeleteAsync()
+	{
+		isBusy = true;
+		message = null;
+		try
+		{
+			await Store.DeleteAsync(selectedKey, contentId);
+			json = await GetSeedJsonAsync(selectedKey);
+			message = "Deleted.";
+		}
+		catch (Exception ex)
+		{
+			message = ex.Message;
+		}
+		finally
+		{
+			isBusy = false;
+		}
+	}
+}

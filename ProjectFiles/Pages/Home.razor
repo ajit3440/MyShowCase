@@ -1,11 +1,16 @@
 ﻿@page "/"
+@page "/{contentId}"
 
 <HeroSection />
-<AboutSection />
-<SkillsSection />
+<AboutSection ContentId="@contentId" />
+<SkillsSection ContentId="@contentId" />
 <ResumeSection />
-<ServicesSection />
+<ServicesSection ContentId="@contentId" />
 <PortfolioSection />
-<TestimonialsSection />
-<FaqSection />
+<TestimonialsSection ContentId="@contentId" />
+<FaqSection ContentId="@contentId" />
 <ContactSection />
+
+@code {
+	[Parameter] public string? contentId { get; set; }
+}

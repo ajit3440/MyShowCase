@@ -77,10 +77,12 @@
 
 @code {
     private SkillsSectionModel Model { get; set; }
+    [Inject] private ContentStore Store { get; set; }
+    [Parameter] public string? ContentId { get; set; }
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        Model = GetSkillsSection();
+        Model = await Store.GetAsync<SkillsSectionModel>("SkillsSection", ContentId) ?? GetSkillsSection();
     }
     private SkillsSectionModel GetSkillsSection()
     {
@@ -88,7 +90,7 @@
         {
             SectionTitle = "Skills",
             SummaryTitle = "Professional Expertise",
-            SummaryDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+            SummaryDescription = "A balanced mix of design thinking and engineering. I build fast, reliable interfaces and services, and I enjoy collaborating across disciplines to ship great products.",
 
             Categories = new List<SkillCategory>
             {

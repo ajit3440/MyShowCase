@@ -74,26 +74,28 @@
 
 @code {
     private AboutSectionModel Model { get; set; }
-    protected override void OnInitialized()
+    [Inject] private ContentStore Store { get; set; }
+    [Parameter] public string? ContentId { get; set; }
+    protected override async Task OnInitializedAsync()
     {
-        Model = GetAboutSection();
+        Model = await Store.GetAsync<AboutSectionModel>("AboutSection", ContentId) ?? GetAboutSection();
     }
     private AboutSectionModel GetAboutSection()
     {
         return new AboutSectionModel
         {
             SectionTitle = "About",
-            SectionSubtitle = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
+            SectionSubtitle = "Learn more about my background, approach, and values.",
             ProfileImageUrl = "assets/img/profile/profile-square-1.webp",
             SignatureImageUrl = "assets/img/misc/signature-1.webp",
             Quote = "Building meaningful digital experiences through creative code.",
-            IntroTitle = "Hi, I'm Brandon - a Creative Developer",
-            IntroDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.",
+            IntroTitle = "Hi, I'm Brandon — a Creative Developer",
+            IntroDescription = "I design and build modern, accessible web experiences with a focus on performance, clarity, and craft. I care deeply about product quality and love turning complex ideas into simple, delightful interfaces.",
             Skills = new List<AboutSkill>
             {
-                new AboutSkill { Icon = "bi bi-palette", Title = "UI/UX Design", Description = "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar" },
-                new AboutSkill { Icon = "bi bi-code-slash", Title = "Frontend Dev", Description = "Sed porttitor lectus nibh. Cras ultricies ligula sed magna" },
-                new AboutSkill { Icon = "bi bi-camera", Title = "Photography", Description = "Vestibulum ac diam sit amet quam vehicula elementum" }
+                new AboutSkill { Icon = "bi bi-palette", Title = "UI/UX Design", Description = "Thoughtful interfaces with usability and consistency in mind." },
+                new AboutSkill { Icon = "bi bi-code-slash", Title = "Frontend Dev", Description = "Robust, maintainable code using modern web technologies." },
+                new AboutSkill { Icon = "bi bi-camera", Title = "Photography", Description = "Visual storytelling to support brand and product narratives." }
             },
             Timeline = new List<JourneyTimeline>
             {
@@ -102,7 +104,7 @@
                 new JourneyTimeline { Year = "2023", Description = "Launched freelance career specializing in creative web solutions" }
             },
             FunFactEmoji = "☕",
-            FunFactText = "Coffee-fueled designer based in Portland",
+            FunFactText = "Coffee‑fueled developer based in Portland",
             PrimaryButtonText = "View My Work",
             PrimaryButtonLink = "#portfolio",
             SecondaryButtonText = "Download Resume",

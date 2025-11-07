@@ -1,4 +1,5 @@
 ﻿@using MyShowCase.Data.FaqSectionModels
+@using MyShowCase.Data
     <!-- FaqSection -->
 <section id="faq" class="faq section">
 
@@ -36,10 +37,12 @@
 </section><!-- /Faq Section -->
 @code {
     private FaqSectionModel Model { get; set; }
+    [Inject] private ContentStore Store { get; set; }
+    [Parameter] public string? ContentId { get; set; }
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        Model = GetFaqSection();
+        Model = await Store.GetAsync<FaqSectionModel>("FaqSection", ContentId) ?? GetFaqSection();
     }
 
     private FaqSectionModel GetFaqSection()
@@ -47,39 +50,39 @@
         return new FaqSectionModel
         {
             SectionTitle = "Frequently Asked Questions",
-            SectionSubtitle = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
+            SectionSubtitle = "Short answers to common questions about my work and process.",
             Faqs = new List<FaqItem>
             {
                 new FaqItem
                 {
-                    Question = "Non consectetur a erat nam at lectus urna duis?",
-                    Answer = "Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.",
+                    Question = "What services do you offer?",
+                    Answer = "I design and build websites and web apps, integrate AI features, and help teams improve performance, accessibility, and developer workflow.",
                     IsActive = true
                 },
                 new FaqItem
                 {
-                    Question = "Feugiat scelerisque varius morbi enim nunc faucibus?",
-                    Answer = "Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui."
+                    Question = "What is your typical project timeline?",
+                    Answer = "Most projects take 3–8 weeks depending on scope and complexity. I’ll propose a phased plan with clear milestones and deliverables."
                 },
                 new FaqItem
                 {
-                    Question = "Dolor sit amet consectetur adipiscing elit pellentesque?",
-                    Answer = "Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis."
+                    Question = "Do you work with existing products?",
+                    Answer = "Yes. I can audit, refactor, or extend existing codebases. I focus on incremental improvements that provide quick wins without disruption."
                 },
                 new FaqItem
                 {
-                    Question = "Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?",
-                    Answer = "Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui."
+                    Question = "How do we communicate during the project?",
+                    Answer = "I provide weekly updates and async status notes. We can use email, Slack, or your preferred tools for day‑to‑day coordination."
                 },
                 new FaqItem
                 {
-                    Question = "Tempus quam pellentesque nec nam aliquam sem et tortor?",
-                    Answer = "Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in."
+                    Question = "What are your rates?",
+                    Answer = "I offer fixed‑scope packages and retainer options. After a brief call and requirements review, I’ll provide a transparent quote."
                 },
                 new FaqItem
                 {
-                    Question = "Perspiciatis quod quo quos nulla quo illum ullam?",
-                    Answer = "Enim ea facilis quaerat voluptas quidem et dolorem. Quis et consequatur non sed in suscipit sequi. Distinctio ipsam dolore et."
+                    Question = "Can you help after launch?",
+                    Answer = "Absolutely. I provide post‑launch support, monitoring, and optimization to ensure your product keeps improving."
                 }
             }
         };

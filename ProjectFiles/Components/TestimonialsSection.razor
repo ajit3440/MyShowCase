@@ -1,4 +1,5 @@
 ﻿@using MyShowCase.Data.TestimonialsSectionModels
+@using MyShowCase.Data
    <!-- TestimonialsSection -->
 <section id="testimonials" class="testimonials section">
     <!-- Section Title -->
@@ -135,36 +136,38 @@
 </section><!-- /Testimonials Section -->
 @code {
     private TestimonialsSectionModel Model { get; set; }
+    [Inject] private ContentStore Store { get; set; }
+    [Parameter] public string? ContentId { get; set; }
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        Model = GetTestimonialsSection();
+        Model = await Store.GetAsync<TestimonialsSectionModel>("TestimonialsSection", ContentId) ?? GetTestimonialsSection();
     }
     private TestimonialsSectionModel GetTestimonialsSection()
     {
         return new TestimonialsSectionModel
         {
             SectionTitle = "Testimonials",
-            SectionSubtitle = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
+            SectionSubtitle = "What clients and reviewers say about my work.",
 
             Critics = new List<CriticReview>
             {
                 new CriticReview
                 {
                     Source = "The New York Times",
-                    Quote = "Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
+                    Quote = "A thoughtful craftsperson who delivers polished, performant experiences.",
                     Rating = 5
                 },
                 new CriticReview
                 {
                     Source = "Washington Post",
-                    Quote = "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Nulla quis lorem ut libero malesuada feugiat.",
+                    Quote = "Clear communication, strong process, and an eye for detail.",
                     Rating = 4.5
                 },
                 new CriticReview
                 {
                     Source = "The Guardian",
-                    Quote = "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis porttitor volutpat.",
+                    Quote = "Design and engineering come together seamlessly in the final product.",
                     Rating = 5
                 }
             },
@@ -174,33 +177,33 @@
                 new TestimonialItem
                 {
                     Name = "Jane Smith",
-                    Title = "Book Enthusiast",
+                    Title = "Product Lead",
                     ImageUrl = "assets/img/person/person-f-1.webp",
-                    Review = "Proin eget tortor risus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla quis lorem ut libero malesuada feugiat.",
+                    Review = "Exceptional partner from discovery through launch. We shipped on time and exceeded our performance goals.",
                     Rating = 5
                 },
                 new TestimonialItem
                 {
                     Name = "Michael Johnson",
-                    Title = "Sci-Fi Blogger",
+                    Title = "Engineering Manager",
                     ImageUrl = "assets/img/person/person-m-2.webp",
-                    Review = "Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Cras ultricies ligula sed magna dictum porta. Vestibulum ante ipsum primis in faucibus orci luctus.",
+                    Review = "Clean, maintainable code and pragmatic architecture. The handoff to our team was smooth.",
                     Rating = 5
                 },
                 new TestimonialItem
                 {
                     Name = "Emily Davis",
-                    Title = "Book Club President",
+                    Title = "Founder",
                     ImageUrl = "assets/img/person/person-f-3.webp",
-                    Review = "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada.",
+                    Review = "Turned a rough concept into a crisp product. Great collaboration and initiative throughout.",
                     Rating = 4.5
                 },
                 new TestimonialItem
                 {
                     Name = "Robert Wilson",
-                    Title = "Literary Reviewer",
+                    Title = "Marketing Director",
                     ImageUrl = "assets/img/person/person-m-4.webp",
-                    Review = "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam id dui posuere blandit. Lorem ipsum dolor sit amet, consectetur.",
+                    Review = "Striking design, fast pages, and measurable results. Would gladly work together again.",
                     Rating = 5
                 }
             },
